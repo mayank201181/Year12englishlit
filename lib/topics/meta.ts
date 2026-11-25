@@ -21,6 +21,10 @@ export interface TopicMeta {
   title: string;
   strand: Strand;
   icon: string;
+  /** Which IB Diploma year normally finishes this topic (1 = DP1 / Year 12, 2 = DP2 / Year 13). */
+  dpYear: 1 | 2;
+  /** Teaching/revision order used when ?dp=2 is active (DP2 first, then DP1). */
+  dpOrder: number;
   level: IBLevel;
   curriculum: string;
   sections: SectionPlan[];
@@ -40,6 +44,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "AoE 1: Readers, Writers & Texts",
     strand: "Areas of Exploration",
     icon: "📖",
+    dpYear: 1,
+    dpOrder: 5,
     level: "SL",
     curriculum: "IB English A: Literature FA2021 — Area of Exploration 1: Close reading, authorial craft, ambiguity & Learner Portfolio",
     sections: [
@@ -74,6 +80,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "AoE 2: Time & Space",
     strand: "Areas of Exploration",
     icon: "🧭",
+    dpYear: 1,
+    dpOrder: 6,
     level: "SL",
     curriculum: "IB English A: Literature FA2021 — Area of Exploration 2: Contexts of production/reception & works in translation",
     sections: [
@@ -108,6 +116,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "AoE 3: Intertextuality — Connecting Texts",
     strand: "Areas of Exploration",
     icon: "🔗",
+    dpYear: 2,
+    dpOrder: 1,
     level: "SL",
     curriculum: "IB English A: Literature FA2021 — Area of Exploration 3: Literary conventions, traditions, allusion & comparative synthesis",
     sections: [
@@ -144,6 +154,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "Literary Forms I: Poetry & Drama Craft",
     strand: "Literary Forms",
     icon: "🎭",
+    dpYear: 1,
+    dpOrder: 7,
     level: "SL",
     curriculum: "IB English A: Literature FA2021 — Unseen & studied craft in Poetry (form, metre, sound) and Drama (staging, subtext, dialogue)",
     sections: [
@@ -178,6 +190,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "Literary Forms II: Prose Fiction & Literary Non-Fiction",
     strand: "Literary Forms",
     icon: "✒️",
+    dpYear: 1,
+    dpOrder: 8,
     level: "SL",
     curriculum: "IB English A: Literature FA2021 — Prose Fiction (focalization, narrative distance, structure) & Literary Non-Fiction (essay, memoir, rhetoric)",
     sections: [
@@ -214,6 +228,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "The 7 Central Concepts & Global Issues",
     strand: "Concepts & Global Issues",
     icon: "🌐",
+    dpYear: 2,
+    dpOrder: 2,
     level: "SL",
     curriculum: "IB English A: Literature FA2021 — 7 Course Concepts, 5 Fields of Inquiry & Individual Oral Global Issue craft",
     sections: [
@@ -250,6 +266,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "External Exam Craft: Paper 1 & Paper 2",
     strand: "Exam & HL Essay Craft",
     icon: "📝",
+    dpYear: 2,
+    dpOrder: 3,
     level: "SL",
     curriculum: "IB English A: Literature FA2021 — Paper 1 Guided Literary Analysis (SL 1 / HL 2 passages), Paper 2 Comparative Essay & Crit A–D",
     sections: [
@@ -284,6 +302,8 @@ export const TOPIC_META: TopicMeta[] = [
     title: "The HL Essay & Critical Inquiry (HL Only)",
     strand: "Exam & HL Essay Craft",
     icon: "🎓",
+    dpYear: 2,
+    dpOrder: 4,
     level: "HL",
     curriculum: "IB English A: Literature FA2021 HL Essay (External Coursework, 20%, 1,200–1,500 words, 20 marks: A5/B5/C5/D5)",
     sections: [
